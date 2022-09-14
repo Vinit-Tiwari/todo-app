@@ -2,7 +2,7 @@ var input = document.getElementById("input");
 let count=0;
 
 input.addEventListener("keydown", function (e) {
-    if (e.code === "Enter") {  //checks whether the pressed key is "Enter"
+    if (e.key === "Enter") {  //checks whether the pressed key is "Enter"
         add();
     }
 });
