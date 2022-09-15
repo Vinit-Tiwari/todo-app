@@ -5,6 +5,10 @@
     background-color: hsl(235, 21%, 11%);
     color: white;
 }
+.bg-light{
+    background-color: rgb(255, 255, 255);
+    color: black;
+}
 
 .row{
     display: flex;
@@ -35,11 +39,20 @@ body{
     display: flex;
     width: 100%;
     height: 20rem;
-    background: url("images/bg-desktop-dark.jpg") no-repeat;
-    background-size: cover;
     position: absolute;
     top: 0%;
     z-index: -2;
+}
+
+.dark{
+    background-image: url("images/bg-desktop-dark.jpg") ;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.light{
+    background: url("images/bg-desktop-light.jpg") no-repeat;
+    background-size: cover;
 }
 
 .content{
@@ -61,11 +74,20 @@ body{
     font-size: 2.5rem;
     letter-spacing: 0.8rem;
     font-weight: 1000;
+    color: white;
 }
 
 .layer2,.layer3{
     width: 100%;
+}
+
+.layer23-dark{
     background-color:hsl(235, 24%, 19%);
+}
+.layer23-light{
+    background-color: white;
+    color: black;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .input{
@@ -74,19 +96,26 @@ body{
     border: none;
     outline:none;
     width: 100%;
-    background-color:hsl(235, 24%, 19%);
     height: 3rem;
     border-radius: 0.2rem;
-    color: white;
     font-size: 1rem;
     letter-spacing: 0.1rem;
-
 }
+
+.input-dark{
+    background-color:hsl(235, 24%, 19%);
+    color: white;
+}
+.input-light{
+    background-color: white;
+    color: black;
+}
+
 .input:focus{
     border: none;
 }
 
-.input::placeholder{
+.input-dark::placeholder{
     color: hsl(234, 39%, 85%);
     font-size:1rem ;
     letter-spacing: 0.1rem;
@@ -108,20 +137,20 @@ body{
     border-radius: 50%;
     justify-content: center;
     margin-left: 1rem;
-    border:0.5px solid hsl(236, 33%, 92%);
+    border:1px solid hsl(0, 0%, 67%);
     transition: 0.1s;
 }
 
 .check:hover::before{
-    border: 0.5px solid red;
+    border: 0.5px solid -webkit-linear-gradient( top,hsl(192, 100%, 67%) , hsl(280, 87%, 65%));
 }
 
 .selected::before{
     background-image: url("images/icon-check.svg");
     background-repeat: no-repeat;
-    background-size: 1rem;
+    background-size: 0.8rem;
     background-position: center;
-    background-color: red;
+    background-color:rgb(240, 75, 240);
 }
 
 
@@ -132,21 +161,21 @@ label{
 
 .list{
     width: 100%;
-    background-color:hsl(235, 24%, 19%);
-    height: 4rem;
-    border-radius: 0.2rem;
-    color: white;
+    height: 3.5rem;
+    border-radius: 5rem;
     font-size: 1rem;
     letter-spacing: 0.1rem;
     align-items: center;
+    overflow: hidden;
 }
+
 
 .lineThrough{
     text-decoration: line-through;
 }
 
 .lord{
-    border-bottom:0.05px solid  hsla(236, 33%, 92%,0.4);
+    border-bottom:0.1px solid  rgba(139, 139, 139, 0.4);
 }
 
 .lowest-row{
@@ -183,6 +212,26 @@ label{
 .despair{
     display: none;
 }
+
+
+.sun{
+    background-image: url("images/icon-sun.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+}
+
+.moon{
+    background-image: url("images/icon-moon.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+}
+
 
 @media only screen and (max-width:600px){
     .delete::before{
