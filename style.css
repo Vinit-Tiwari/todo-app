@@ -167,6 +167,7 @@ label{
     letter-spacing: 0.1rem;
     align-items: center;
     overflow: hidden;
+    transition: 0.3s;
 }
 
 
@@ -176,6 +177,7 @@ label{
 
 .lord{
     border-bottom:0.1px solid  rgba(139, 139, 139, 0.4);
+    transition: 0.3s;
 }
 
 .lowest-row{
@@ -241,3 +243,19 @@ label{
         min-width: 85vw;
     }
 }
+
+.status-active{
+    color: white;
+    font-size: 1.1rem;
+}
+
+.lowest-row p:not(.status-active){
+    font-size: 0.9rem;
+    color: hsl(234, 39%, 85%);
+    cursor: pointer;
+    transition: 0.3s;
+}
+.numberofitems{
+    padding: 0 1rem;
+}
+.status{width: 50%; gap: 1rem; padding: 0 2rem;}

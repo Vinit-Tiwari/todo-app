@@ -32,6 +32,7 @@ selectAll.addEventListener('click',function(){
 
         })
     }
+    counterUpdate();
 })
 
 document.querySelectorAll('.checkbox').forEach ((element) => { 
@@ -39,6 +40,7 @@ document.querySelectorAll('.checkbox').forEach ((element) => {
     element.addEventListener("click", () => {
         element.classList.toggle('selected');
         element.parentNode.classList.toggle('lineThrough')
+        counterUpdate();
     })
     console.log(element)
 }
@@ -48,6 +50,7 @@ document.querySelectorAll('.checkbox').forEach ((element) => {
 document.querySelectorAll('.delete').forEach ((element) => { 
     element.addEventListener("click", () => {
         element.parentNode.classList.toggle('despair')
+        counterUpdate();
     })
     console.log(element)
 }
@@ -69,14 +72,13 @@ function add(){
         </span>
         `;
 
-        count++
     }
     document.querySelector('#input').value='';
     document.querySelectorAll('.checkbox').forEach ((element) => { 
         element.addEventListener("click", () => {
             element.classList.toggle('selected');
             element.parentNode.classList.toggle('lineThrough')
-            
+            counterUpdate();
         })
         console.log(element)
     }
@@ -85,13 +87,13 @@ function add(){
     document.querySelectorAll('.delete').forEach ((element) => { 
         element.addEventListener("click", () => {
             element.parentNode.classList.toggle('despair')
-        
+            counterUpdate();
         })
         console.log(element)
     }
     )
+    counterUpdate();
 
-    document.querySelector('#numberofitems').innerHTML=`${count}` +" items left"
 }
 
 let mode=document.querySelector('#mode')
@@ -108,6 +110,57 @@ mode.addEventListener('click', function(){
     document.querySelector('.layer2').classList.toggle('layer23-light')
     document.querySelector('.layer3').classList.toggle('layer23-dark')
     document.querySelector('.layer3').classList.toggle('layer23-light')
+})
 
+let counter=document.querySelector('#numberofitems')
 
+function counterUpdate(){
+    count=0
+    document.querySelectorAll('.checkbox').forEach((ele)=>{
+        if(ele.classList.contains('selected')){
+
+        }
+        else{
+            count++;
+        }
+    })
+    counter.innerHTML=`${count}`+" items left"
+}
+
+document.querySelector('#all').addEventListener('click',()=>{
+    document.querySelectorAll('.checkbox').forEach((ele)=>{
+        ele.parentNode.classList.remove('despair')
+    })
+    document.querySelector('#all').classList.add('status-active')
+    document.querySelector('#active').classList.remove('status-active')
+    document.querySelector('#completed').classList.remove('status-active')
+    
+})
+
+document.querySelector('#active').addEventListener('click',()=>{
+    document.querySelectorAll('.checkbox').forEach((ele)=>{
+        if(ele.classList.contains('selected')){
+            ele.parentNode.classList.add('despair')
+        }
+        else{
+            ele.parentNode.classList.remove('despair')
+        }
+    })
+    document.querySelector('#active').classList.add('status-active')
+    document.querySelector('#all').classList.remove('status-active')
+    document.querySelector('#completed').classList.remove('status-active')
+})
+
+document.querySelector('#completed').addEventListener('click',()=>{
+    document.querySelectorAll('.checkbox').forEach((ele)=>{
+        if(ele.classList.contains('selected')){
+            ele.parentNode.classList.remove('despair')
+        }
+        else{
+            ele.parentNode.classList.add('despair')
+        }
+    })
+    document.querySelector('#completed').classList.add('status-active')
+    document.querySelector('#active').classList.remove('status-active')
+    document.querySelector('#all').classList.remove('status-active')
 })
