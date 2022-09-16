@@ -11,40 +11,38 @@ let selectAll=document.querySelector('#select-all')
 selectAll.addEventListener('click',function(){
     let flag=0;
 
-    document.querySelectorAll('.check').forEach((ele)=>{
+    document.querySelectorAll('.checkbox').forEach((ele)=>{
         if(!ele.classList.contains('selected')){
             flag=1
         }
     })
 
     if(flag==1){
-        selectAll.classList.add('selected')
-        document.querySelectorAll('.check').forEach((ele)=>{
+        document.querySelectorAll('.checkbox').forEach((ele)=>{
             ele.classList.add('selected')
             ele.parentNode.classList.add('lineThrough')
+            selectAll.classList.add('selected')
         })
     }
     else{
-        document.querySelectorAll('.check').forEach((ele)=>{
+        document.querySelectorAll('.checkbox').forEach((ele)=>{
             ele.classList.remove('selected')
             ele.parentNode.classList.remove('lineThrough')
+            selectAll.classList.remove('selected')
 
         })
     }
 })
 
-document.querySelectorAll('.check').forEach ((element) => { 
-        if(element.classList.contains('check-dark')){
+document.querySelectorAll('.checkbox').forEach ((element) => { 
 
-        }
-        else{
-            element.addEventListener("click", () => {
-                element.classList.toggle('selected');
-                element.parentNode.classList.toggle('lineThrough')
-            })
-            console.log(element)
-        }
-    }
+    element.addEventListener("click", () => {
+        element.classList.toggle('selected');
+        element.parentNode.classList.toggle('lineThrough')
+    })
+    console.log(element)
+}
+    
 )
 
 document.querySelectorAll('.delete').forEach ((element) => { 
@@ -62,7 +60,7 @@ function add(){
         list.innerHTML += `
         <span>
         <label for="" class="row lord" style="gap: 2.5rem;">
-        <span class="check"></span>
+        <span class="check checkbox"></span>
         <span class="list row">
             ${document.querySelector('#input').value}
         </span>
@@ -74,7 +72,7 @@ function add(){
         count++
     }
     document.querySelector('#input').value='';
-    document.querySelectorAll('.check').forEach ((element) => { 
+    document.querySelectorAll('.checkbox').forEach ((element) => { 
         element.addEventListener("click", () => {
             element.classList.toggle('selected');
             element.parentNode.classList.toggle('lineThrough')
