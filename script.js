@@ -7,13 +7,43 @@ input.addEventListener("keydown", function (e) {
     }
 });
 
+let selectAll=document.querySelector('#select-all')
+selectAll.addEventListener('click',function(){
+    let flag=0;
+
+    document.querySelectorAll('.check').forEach((ele)=>{
+        if(!ele.classList.contains('selected')){
+            flag=1
+        }
+    })
+
+    if(flag==1){
+        selectAll.classList.add('selected')
+        document.querySelectorAll('.check').forEach((ele)=>{
+            ele.classList.add('selected')
+            ele.parentNode.classList.add('lineThrough')
+        })
+    }
+    else{
+        document.querySelectorAll('.check').forEach((ele)=>{
+            ele.classList.remove('selected')
+            ele.parentNode.classList.remove('lineThrough')
+
+        })
+    }
+})
 
 document.querySelectorAll('.check').forEach ((element) => { 
-        element.addEventListener("click", () => {
-            element.classList.toggle('selected');
-            element.parentNode.classList.toggle('lineThrough')
-        })
-        console.log(element)
+        if(element.classList.contains('check-dark')){
+
+        }
+        else{
+            element.addEventListener("click", () => {
+                element.classList.toggle('selected');
+                element.parentNode.classList.toggle('lineThrough')
+            })
+            console.log(element)
+        }
     }
 )
 
@@ -40,12 +70,15 @@ function add(){
         </label>
         </span>
         `;
+
+        count++
     }
     document.querySelector('#input').value='';
     document.querySelectorAll('.check').forEach ((element) => { 
         element.addEventListener("click", () => {
             element.classList.toggle('selected');
             element.parentNode.classList.toggle('lineThrough')
+            
         })
         console.log(element)
     }
@@ -54,10 +87,13 @@ function add(){
     document.querySelectorAll('.delete').forEach ((element) => { 
         element.addEventListener("click", () => {
             element.parentNode.classList.toggle('despair')
+        
         })
         console.log(element)
     }
     )
+
+    document.querySelector('#numberofitems').innerHTML=`${count}` +" items left"
 }
 
 let mode=document.querySelector('#mode')
