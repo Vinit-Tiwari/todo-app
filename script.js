@@ -110,6 +110,11 @@ mode.addEventListener('click', function(){
     document.querySelector('.layer2').classList.toggle('layer23-light')
     document.querySelector('.layer3').classList.toggle('layer23-dark')
     document.querySelector('.layer3').classList.toggle('layer23-light')
+    document.querySelector('.status').classList.toggle('status-dark')
+    document.querySelector('.status').classList.toggle('status-light')
+    
+    document.querySelector('#all').style.color='black'
+
 })
 
 let counter=document.querySelector('#numberofitems')

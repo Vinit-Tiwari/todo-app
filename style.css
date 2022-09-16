@@ -87,7 +87,7 @@ body{
 .layer23-light{
     background-color: white;
     color: black;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
 .input{
@@ -244,16 +244,22 @@ label{
 }
 
 .status-active{
-    color: white;
     font-size: 1.1rem;
+}
+.status-dark{
+    color: white;
+}
+.status-light{
+    color: black;
 }
 
 .lowest-row p:not(.status-active){
     font-size: 0.9rem;
-    color: hsl(234, 39%, 85%);
+    color: hsl(234, 5%, 38%);
     cursor: pointer;
     transition: 0.3s;
 }
+
 .numberofitems{
     padding: 0 1rem;
 }
