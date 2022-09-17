@@ -182,6 +182,8 @@ label{
 .lowest-row{
     height: 4rem;
     align-items: center;
+    display: flex;
+    justify-content: space-around;
 }
 
 .delete{
@@ -243,6 +245,8 @@ label{
     }
 }
 
+
+
 .status-active{
     font-size: 1.1rem;
 }
@@ -260,7 +264,4 @@ label{
     transition: 0.3s;
 }
 
-.numberofitems{
-    padding: 0 1rem;
-}
-.status{width: 50%; gap: 1rem; padding: 0 2rem;}
+.status{gap: 1rem; align-items: center;}
