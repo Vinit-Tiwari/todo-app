@@ -49,7 +49,7 @@ document.querySelectorAll('.checkbox').forEach ((element) => {
 
 document.querySelectorAll('.delete').forEach ((element) => { 
     element.addEventListener("click", () => {
-        element.parentNode.classList.toggle('despair')
+        element.parentNode.classList.add('perment-delete')
         counterUpdate();
     })
     console.log(element)
@@ -86,7 +86,7 @@ function add(){
 
     document.querySelectorAll('.delete').forEach ((element) => { 
         element.addEventListener("click", () => {
-            element.parentNode.classList.toggle('despair')
+            element.parentNode.classList.add('perment-delete')
             counterUpdate();
         })
         console.log(element)
@@ -113,7 +113,6 @@ mode.addEventListener('click', function(){
     document.querySelector('.status').classList.toggle('status-dark')
     document.querySelector('.status').classList.toggle('status-light')
     
-    document.querySelector('#all').style.color='black'
 
 })
 
@@ -122,10 +121,7 @@ let counter=document.querySelector('#numberofitems')
 function counterUpdate(){
     count=0
     document.querySelectorAll('.checkbox').forEach((ele)=>{
-        if(ele.classList.contains('selected')){
-
-        }
-        else{
+        if(!(ele.classList.contains('selected')) && !(ele.parentNode.classList.contains('perment-delete'))){
             count++;
         }
     })

@@ -250,18 +250,16 @@ label{
 .status-active{
     font-size: 1.1rem;
 }
-.status-dark{
-    color: white;
-}
-.status-light{
-    color: black;
-}
 
 .lowest-row p:not(.status-active){
     font-size: 0.9rem;
     color: hsl(234, 5%, 38%);
     cursor: pointer;
     transition: 0.3s;
+}
+
+.perment-delete{
+    display: none;
 }
 
 .status{gap: 1rem; align-items: center;}
