@@ -1,0 +1,23 @@
+let mode=document.querySelector('#mode')
+mode.addEventListener('click', function(){
+    mode.classList.toggle('moon')
+    mode.classList.toggle('sun')
+    document.querySelector('#bg-image').classList.toggle('dark')
+    document.querySelector('#bg-image').classList.toggle('light')
+    document.body.classList.toggle('bg-dark')
+    document.body.classList.toggle('bg-light')
+    document.querySelector('#input').classList.toggle('input-dark')
+    document.querySelector('#date').classList.toggle('input-dark')
+    document.querySelector('#date').classList.toggle('input-light')
+    document.querySelector('#time').classList.toggle('input-light')
+    document.querySelector('#time').classList.toggle('input-dark')
+    document.querySelector('#input').classList.toggle('input-light')
+    document.querySelector('.layer2').classList.toggle('layer23-dark')
+    document.querySelector('.layer2').classList.toggle('layer23-light')
+    document.querySelector('.layer3').classList.toggle('layer23-dark')
+    document.querySelector('.layer3').classList.toggle('layer23-light')
+    document.querySelector('.status').classList.toggle('status-dark')
+    document.querySelector('.status').classList.toggle('status-light')
+    
+
+})

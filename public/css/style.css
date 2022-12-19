@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
+
+
+.bg-dark{
+    background-color: hsl(235, 21%, 11%);
+    color: white;
+}
+.bg-light{
+    background-color: rgb(255, 255, 255);
+    color: black;
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+}
+
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    min-height: 100vh;
+    padding: 1rem;
+    flex-direction: column;
+    font-family: 'Outfit', sans-serif;
+}
+
+.bg{
+    display: flex;
+    width: 100%;
+    height: 20rem;
+    position: absolute;
+    top: 0%;
+    z-index: -2;
+}
+
+.dark{
+    background-image: url("images/bg-desktop-dark.jpg") ;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.light{
+    background: url("images/bg-desktop-light.jpg") no-repeat;
+    background-size: cover;
+}
+
+.content{
+    margin-top: 10.5rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1.5rem;
+    min-width: 35rem;
+}
+
+.layer1{
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.logo{
+    font-size: 2.5rem;
+    letter-spacing: 0.8rem;
+    font-weight: 1000;
+    color: white;
+}
+
+.layer2,.layer3{
+    width: 100%;
+}
+
+.layer23-dark{
+    background-color:hsl(235, 24%, 19%);
+}
+.layer23-light{
+    background-color: white;
+    color: black;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+.input{
+    margin: 0;
+    padding: 0%;
+    border: none;
+    outline:none;
+    width: fit-content;
+    overflow: hidden;
+    height: 3rem;
+    border-radius: 0.2rem;
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+}
+.btn{
+    padding: 0.3rem 1.3rem;
+    cursor: pointer;
+}
+
+.input-dark{
+    background-color:hsl(235, 24%, 19%);
+    color: white;
+}
+.input-light{
+    background-color: white;
+    color: black;
+}
+
+.input:focus{
+    border: none;
+}
+
+.input-dark::placeholder{
+    color: hsl(234, 39%, 85%);
+    font-size:1rem ;
+    letter-spacing: 0.1rem;
+}
+
+.check{
+    appearance: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.check::before{
+    content: '';
+    position: absolute;
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 50%;
+    justify-content: center;
+    margin-left: 1rem;
+    border:1px solid hsl(0, 0%, 67%);
+    transition: 0.1s;
+}
+
+.check:hover::before{
+    border: 0.5px solid -webkit-linear-gradient( top,hsl(192, 100%, 67%) , hsl(280, 87%, 65%));
+}
+
+.selected::before{
+    background-image: url("images/icon-check.svg");
+    background-repeat: no-repeat;
+    background-size: 0.8rem;
+    background-position: center;
+    background-color:rgb(240, 75, 240);
+}
+
+
+form,label{
+    justify-content: space-between;
+    padding: 0  1rem;
+}
+
+.list{
+    width: 100%;
+    height: 3.5rem;
+    border-radius: 5rem;
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    align-items: center;
+    overflow: hidden;
+    transition: 0.3s;
+    justify-content: space-between;
+}
+
+.lineThrough{
+    text-decoration: line-through;
+}
+
+.lord{
+    border-bottom:0.1px solid  rgba(139, 139, 139, 0.4);
+    transition: 0.3s;
+}
+
+.lowest-row{
+    height: 4rem;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+.delete{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s;
+}
+.delete::before{
+    content: '';
+    position: absolute;
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 50%;
+    justify-content: center;
+    transition: 0.5s;
+    background-image: url('images/icon-cross.svg');
+    background-repeat: no-repeat;
+    background-size: 1rem;
+    background-position: center;
+    margin-right: 1rem;
+    display: none;
+    cursor: pointer;
+}
+.lord:hover  .delete::before{
+    display: block;
+}
+
+.despair{
+    display: none;
+}
+
+
+.sun{
+    background-image: url("images/icon-sun.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+}
+
+.moon{
+    background-image: url("images/icon-moon.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+}
+
+
+@media only screen and (max-width:600px){
+    .delete::before{
+        display: block;
+    }
+    .content{
+        min-width: 85vw;
+    }
+}
+
+
+
+.status-active{
+    font-size: 1.1rem;
+}
+
+.lowest-row p:not(.status-active){
+    font-size: 0.9rem;
+    color: hsl(234, 5%, 38%);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.perment-delete{
+    display: none;
+}
+
+.status{gap: 1rem; align-items: center;}
